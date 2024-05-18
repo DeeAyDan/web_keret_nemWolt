@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+$font: 'Josefin Sans', sans-serif;
+
+$primaryColor: #009de0;
+$secondaryColor: #f5f5f5;
+$textColor: #333;
+
+
+div{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+div input{
+    font-family: $font;
+    border-radius: 1rem 0 0 1rem;
+    border: none;
+    height: 3rem;
+    width: 20rem;
+    background-color: #f1f1f1;
+    padding: 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+}
+
+div button{
+    color: $textColor;
+    height: 3rem;
+    width: 5rem;
+    font-size: 1rem;
+    border-radius: 0 1rem 1rem 0;
+    border: none;
+    background-color: $primaryColor;
+    color: white;
+    opacity: .8;
+    outline: none;
+}
+
+div button:hover{
+    opacity: 1;
+    cursor: pointer;
+}
