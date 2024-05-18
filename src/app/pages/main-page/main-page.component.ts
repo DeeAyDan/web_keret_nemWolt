@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodService } from '../../services/food/food.service';
 import { CommonModule } from '@angular/common';
+import { Food } from '../../shared/models/Food';
 
 @Component({
   selector: 'app-main-page',
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class MainPageComponent implements OnInit{
 
-  foods: String[] = []
+  foods: Food[] = []
   constructor(private foodService: FoodService) { }
 
   ngOnInit(): void {
