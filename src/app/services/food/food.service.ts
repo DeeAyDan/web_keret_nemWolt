@@ -1,13 +1,49 @@
 import { Injectable } from '@angular/core';
 import {Food} from '../../shared/models/Food';
+import {Tag} from '../../shared/models/Tag';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FoodService {
 
-  constructor() { }
+  constructor() {}
 
+  //TODO backend
+  getAllTags():Tag[] {
+    return [
+      {name: 'All', count: 15},
+      {name: 'Burrito', count: 1},
+      {name: 'Ebéd', count: 7},
+      {name: 'Csirke', count: 3},
+      {name: 'Vacsora', count: 5},
+      {name: 'Kávé', count: 1},
+      {name: 'Reggeli', count: 4},
+      {name: 'Desszert', count: 2},
+      {name: 'Marha', count: 3},
+      {name: 'Hamburger', count: 1},
+      {name: 'Tészta', count: 1},
+      {name: 'Pizza', count: 1},
+      {name: 'Leves', count: 2},
+      {name: 'Sertés', count: 1},
+      {name: 'Hal', count: 1}
+    ]
+  }
+
+  getAllFoodBySearchTerm(searchTerm: string):Food[] {
+    return this.getAllFood().filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  }
+
+  getAllFoodByTag(tag: string):Food[] {
+    if(tag === 'All'){
+      return this.getAllFood();
+    }
+    else {
+      return this.getAllFood().filter(food => food.tag?.includes(tag));
+    }
+  }
+
+  //TODO backend
   getAllFood():Food[] {
     return [
       {

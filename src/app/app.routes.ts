@@ -4,4 +4,5 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 export const routes: Routes = [
     {path: '', component: MainPageComponent},
     {path: 'search/:searchTerm', component: MainPageComponent},
+    {path: 'tag/:tag', component: MainPageComponent},
 ];
