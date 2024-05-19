@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+$titleFont: 'Bebas Neue', cursive;
+$font: 'Josefin Sans', sans-serif;
+
+$primaryColor: #009de0;
+$secondaryColor: #f5f5f5;
+$textColor: #333;
+
+h1{
+    color: $textColor;
+    font-family: $titleFont;
+    font-size: 2rem;
+    margin: 1rem 0 3rem 0;
+}
+
+.login_component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 3rem 0 1rem 0;
+    flex-direction: column;
+    font-family: $font;
+}
+
+span{
+    color: $textColor;
+    font-family: $font;
+    font-size: 1rem;
+    margin: 1rem 0 1rem 0;
+}
+
+span button{
+    margin: 1rem;
+    background-color: $primaryColor;
+    font-family: $font;
+    color: $secondaryColor;
+}

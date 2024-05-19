@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Location } from '@angular/common';
 import { AuthService } from '../../services/auth/auth.service';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-register-page',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatButtonModule, RouterModule],
   templateUrl: './register-page.component.html',
   styleUrl: './register-page.component.scss'
 })
@@ -60,9 +63,5 @@ export class RegisterComponent implements OnInit {
         console.log(err);
       });
     }
-  }
-
-  goBack(){
-    this.location.back();
   }
 }

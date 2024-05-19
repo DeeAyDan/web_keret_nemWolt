@@ -1,6 +1,7 @@
-<div class="login_component">
+<div class="register_component">
+    <h1>Regisztráció</h1>
     <div class="div-flex">
-        <h1>Regisztráció</h1>
+        
         <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
             <div>
                 <label for="email">Email:</label>
@@ -26,7 +27,7 @@
             </div>
             <div>
                 <button type="submit" mat-flat-button color="accent">Regisztráció</button>
-                <button (click)="goBack()" mat-flat-button color="accent">Vissza</button>
+                <button type="button" routerLink="/login" mat-flat-button color="accent">Bejelentkezés</button>
             </div>
         </form>
     </div>
