@@ -9,7 +9,25 @@ export class FoodService {
 
   constructor() {}
 
-  //TODO backend
+  //TODO
+  getFoodById(id: number):Food {
+    return this.getAllFood().find(food => food.id == id)!;
+  }
+
+  getAllFoodBySearchTerm(searchTerm: string):Food[] {
+    return this.getAllFood().filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  }
+
+  getAllFoodByTag(tag: string):Food[] {
+    if(tag === 'All'){
+      return this.getAllFood();
+    }
+    else {
+      return this.getAllFood().filter(food => food.tag?.includes(tag));
+    }
+  }
+
+    //TODO backend
   getAllTags():Tag[] {
     return [
       {name: 'All', count: 15},
@@ -28,19 +46,6 @@ export class FoodService {
       {name: 'Sertés', count: 1},
       {name: 'Hal', count: 1}
     ]
-  }
-
-  getAllFoodBySearchTerm(searchTerm: string):Food[] {
-    return this.getAllFood().filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()))
-  }
-
-  getAllFoodByTag(tag: string):Food[] {
-    if(tag === 'All'){
-      return this.getAllFood();
-    }
-    else {
-      return this.getAllFood().filter(food => food.tag?.includes(tag));
-    }
   }
 
   //TODO backend
