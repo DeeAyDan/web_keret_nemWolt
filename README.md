@@ -19,8 +19,8 @@ Ez a projekt egy online etelrendelest szimulalo oldal, ami a Webfejlesztesi Kere
 - [X] Adatmodell definiálása (legalább 4 TypeScript interfész vagy class formájában (ugyanennyi kollekció))
 - [X] Alkalmazás felbontása megfelelő számú komponensre (egyetlen komponens TS és HTML kódja sem haladja meg a 250 sort és soronként a 400 karaktert)
 - [ ] Reszponzív, mobile-first felület (minden adat látható és jól jelenik meg böngészőben is, mobil nézetben is)
-- [ ] Legalább 2 különböző attribútum direktíva használata
-- [ ] Legalább 2 különböző strukturális direktíva használata
+- [X] Legalább 2 különböző attribútum direktíva használata
+- [X] Legalább 2 különböző strukturális direktíva használata
 - [X] Adatátadás szülő és gyermek komponensek között (legalább 1 @Input és 1 @Output)
 - [ ] Legalább 10 különböző Material elem helyes használata.
 - [ ] Adatbevitel Angular form-ok segítségével megvalósítva (legalább 2)

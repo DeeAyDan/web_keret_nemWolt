@@ -1,12 +1,12 @@
-<header>
+<mat-toolbar>
     <div class="container">
         <a href="#" routerLink="/" class="logo">NemWolt</a>
         <nav>
             <ul>
                 <li>
-                    <a href="#" routerLink="/cart">Kosár</a>
+                    <a matBadge="{{cart.totalQuantity}}" href="#" routerLink="/cart">Kosár</a>
                 </li>
             </ul>
         </nav>
     </div>
-</header>
+</mat-toolbar>
