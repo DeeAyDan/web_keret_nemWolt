@@ -6,8 +6,8 @@
         <span class="name">
             {{food.name}}
         </span>
-        <span class="favorite {{food.favorite?'':'not'}}">
-            ❤
+        <span (click)="changeFavorite()" mat-icon-button class="favorite {{food.favorite?'':'not'}}">
+                <mat-icon>favorite</mat-icon>
         </span>
     </div>
     <div class="origins">
@@ -30,8 +30,7 @@
         <span>{{food.price}} FT</span>
     </div>
 
-    <button mat-flat-button color="accent" (click)="addToCart()">Kosárba!</button>
+    <button mat-stroked-button color="accent" (click)="addToCart()">Kosárba!</button>
 </div>
 
 </div>
-

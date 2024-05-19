@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 import { TagsComponent } from '../../shared/tags/tags.component';
 import { CartService } from '../../services/cart/cart.service';
 import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-food-page',
   standalone: true,
-  imports: [CommonModule, TagsComponent, MatButtonModule],
+  imports: [CommonModule, TagsComponent, MatButtonModule, MatIconModule],
   templateUrl: './food-page.component.html',
   styleUrl: './food-page.component.scss'
 })
@@ -31,5 +32,9 @@ export class FoodPageComponent {
   addToCart(){
     this.cartService.addToCart(this.food);
     this.router.navigate(['/cart']);
+  }
+
+  changeFavorite(){
+    this.food.favorite = !this.food.favorite;
   }
 }
