@@ -5,11 +5,12 @@ import { Food } from '../../shared/models/Food';
 import { ActivatedRoute } from '@angular/router';
 import { SearchComponent } from '../../shared/search/search.component';
 import { TagsComponent } from '../../shared/tags/tags.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [CommonModule, SearchComponent, TagsComponent],
+  imports: [CommonModule, SearchComponent, TagsComponent, RouterModule],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })

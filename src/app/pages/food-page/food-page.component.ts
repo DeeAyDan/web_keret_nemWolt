@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Food } from '../../shared/models/Food';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { FoodService } from '../../services/food/food.service';
 import { CommonModule } from '@angular/common';
 import { TagsComponent } from '../../shared/tags/tags.component';
+import { CartService } from '../../services/cart/cart.service';
 
 @Component({
   selector: 'app-food-page',
@@ -15,7 +16,10 @@ import { TagsComponent } from '../../shared/tags/tags.component';
 export class FoodPageComponent {
 
   food!: Food;
-  constructor(private activatedRoute:ActivatedRoute, private foodService: FoodService) {
+  constructor(private activatedRoute:ActivatedRoute,
+              private foodService: FoodService,
+              private cartService: CartService,
+              private router:Router) {
     activatedRoute.params.subscribe((params) => {
       if(params['id']){
         this.food = this.foodService.getFoodById(params['id']);
@@ -23,4 +27,8 @@ export class FoodPageComponent {
     })
   }
 
+  addToCart(){
+    this.cartService.addToCart(this.food);
+    this.router.navigate(['/cart']);
+  }
 }
