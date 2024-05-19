@@ -4,12 +4,12 @@ Ez a projekt egy online etelrendelest szimulalo oldal, ami a Webfejlesztesi Kere
 
 ## Ha nem menne a regisztracio valamiert ezzel be tudsz jelentkezni:
 
--Email: test@test.com
--Jelszó: 123456
+- Email: test@test.com
+- Jelszó: 123456
 
 ## Hosting Link
 
-#TODO
+- https://nemwolt.web.app/
 
 ## Pontozasi segítség
 
