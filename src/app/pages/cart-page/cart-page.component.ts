@@ -4,12 +4,13 @@ import { CartService } from '../../services/cart/cart.service';
 import { Cart } from '../../shared/models/Cart';
 import { CartItem } from '../../shared/models/CartItem';
 import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
   selector: 'app-cart-page',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, MatButtonModule],
   templateUrl: './cart-page.component.html',
   styleUrl: './cart-page.component.scss'
 })

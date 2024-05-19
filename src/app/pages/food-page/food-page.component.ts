@@ -5,11 +5,12 @@ import { FoodService } from '../../services/food/food.service';
 import { CommonModule } from '@angular/common';
 import { TagsComponent } from '../../shared/tags/tags.component';
 import { CartService } from '../../services/cart/cart.service';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-food-page',
   standalone: true,
-  imports: [CommonModule, TagsComponent],
+  imports: [CommonModule, TagsComponent, MatButtonModule],
   templateUrl: './food-page.component.html',
   styleUrl: './food-page.component.scss'
 })
