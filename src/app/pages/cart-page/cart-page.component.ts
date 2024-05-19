@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart/cart.service';
 import { Cart } from '../../shared/models/Cart';
 import { CartItem } from '../../shared/models/CartItem';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-cart-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './cart-page.component.html',
   styleUrl: './cart-page.component.scss'
 })

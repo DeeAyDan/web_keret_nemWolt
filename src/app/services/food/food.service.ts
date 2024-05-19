@@ -63,7 +63,7 @@ export class FoodService {
       },
       {
         id: 2,
-        name: 'Whole ass fucking csirke',
+        name: 'Whole ass csirke',
         price: 2500,
         cookTime: '30-35 perc',
         favorite: true,
