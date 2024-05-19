@@ -1,11 +1,15 @@
-<form>
-    <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-    </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-    </div>
-    <button type="submit">Login</button>
-</form>
+<div class="login_component">
+    <h1>Bejelentkezés</h1>
+    <span>
+        <label for="email">Email:</label>
+        <input type="text" [formControl]="email">
+    </span>
+    <span>
+        <label for="password">Jelszó:</label>
+        <input type="password" [formControl]="password">
+    </span>
+    <span>
+            <button (click)="login()" mat-flat-button color="accent">Bejelentkezés</button>
+            <button routerLink="/register" mat-flat-button color="accent">Regisztráció</button>
+    </span>
+</div>

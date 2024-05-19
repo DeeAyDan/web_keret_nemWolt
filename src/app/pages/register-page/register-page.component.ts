@@ -1,40 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-register-page',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './register-page.component.html',
   styleUrl: './register-page.component.scss'
 })
 
 export class RegisterComponent implements OnInit {
-  registerForm!: FormGroup;
+  
+  signUpForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+    confirmPassword: new FormControl(''),
+    name: new FormGroup({
+      firstName: new FormControl(''),
+      lastName: new FormControl(''),
+    })
+  });
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private location: Location) {}
 
   ngOnInit(): void {
-    this.registerForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required]
-    }, { validator: this.passwordMatchValidator });
+    
   }
 
-  passwordMatchValidator: ValidatorFn = (formGroup: AbstractControl): {[key: string]: boolean} | null => {
-    const password = formGroup.get('password');
-    const confirmPassword = formGroup.get('confirmPassword');
-    if (password && confirmPassword && password.value !== confirmPassword.value) {
-      return { 'mismatch': true };
-    }
-    return null;
-  };
+  goBack(){
+    this.location.back();
+  }
 
-  onSubmit(): void {
-    if (this.registerForm.valid) {
-      console.log('Form Submitted', this.registerForm.value);
-    }
+  onSubmit(){
+    console.log(this.signUpForm.value);
   }
 }
