@@ -1,6 +1,6 @@
-<app-search></app-search>
-<app-tags></app-tags>
-<ul>
+<app-search *ngIf="loggedInUser"></app-search>
+<app-tags *ngIf="loggedInUser"></app-tags>
+<ul *ngIf="loggedInUser">
     <li *ngFor="let food of foods">
         <a href="#" routerLink="/food/{{food.id}}">
             <img src="{{food.imageUrl}}" alt="">
@@ -31,3 +31,7 @@
         </a>
     </li>
 </ul>
+<div class="loggedoutdiv" *ngIf="!(loggedInUser)">
+    <p class="pone">Üdvözöllek a "Nem"Wolt-on!</p>
+    <p class="ptwo">Az oldal megtekintéséhez <span  routerLink="/login">jelentkezz be</span> vagy <span  routerLink="/register">regisztrálj</span>!</p>
+</div>

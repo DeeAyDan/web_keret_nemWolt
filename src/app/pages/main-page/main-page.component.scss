@@ -82,3 +82,30 @@ li a:hover{
     color: #414141;
     margin-top: 0.7rem;
 }
+
+.loggedoutdiv{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5rem;
+    gap: 2rem;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.loggedoutdiv .pone{
+    font-size: 3rem;
+    font-family: $titleFont;
+    color: $textColor;
+}
+
+.loggedoutdiv .ptwo{
+    font-size: 2rem;
+    font-family: $font;
+    color: $textColor;
+}
+
+.loggedoutdiv .ptwo span{
+    color: $primaryColor;
+    cursor: pointer;
+}

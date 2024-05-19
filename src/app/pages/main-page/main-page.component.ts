@@ -17,6 +17,7 @@ import { error } from 'console';
   styleUrl: './main-page.component.scss'
 })
 export class MainPageComponent implements OnInit{
+  loggedInUser?: firebase.default.User | null;
   foods: Food[] = []
   constructor(private authService:AuthService, private foodService: FoodService, private route:ActivatedRoute) { }
 
@@ -31,6 +32,12 @@ export class MainPageComponent implements OnInit{
       else{
         this.foods = this.foodService.getAllFood()
       }
-  })
+    })
+    
+    this.authService.isUserLoggedIn().subscribe(user => {
+      this.loggedInUser = user;
+    }, error => {
+      console.log(error);
+    });
   }
 }
