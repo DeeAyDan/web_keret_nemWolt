@@ -66,7 +66,7 @@ export class FoodService {
         name: 'Whole ass csirke',
         price: 2500,
         cookTime: '30-35 perc',
-        favorite: true,
+        favorite: false,
         origins: ['Amerika'],
         imageUrl: '/assets/food-images/chicken-1.jpg',
         tag: ['Csirke', 'Ebéd']
@@ -86,7 +86,7 @@ export class FoodService {
         name: 'Erdei Gyümölcsös Puding',
         price: 1750,
         cookTime: '15-20 perc',
-        favorite: true,
+        favorite: false,
         origins: ['Francia'],
         imageUrl: '/assets/food-images/dessert-1.jpg',
         tag: ['Desszert', 'Ebéd', 'Reggeli']
@@ -96,7 +96,7 @@ export class FoodService {
         name: 'Fagyis amerikai palacsinta',
         price: 1600,
         cookTime: '15-20 perc',
-        favorite: true,
+        favorite: false,
         origins: ['Amerika'],
         imageUrl: '/assets/food-images/dessert-2.jpg',
         tag: ['Desszert', 'Reggeli']
@@ -126,7 +126,7 @@ export class FoodService {
         name: 'Olasz Csirkés Pizza',
         price: 1500,
         cookTime: '20-25 perc',
-        favorite: true,
+        favorite: false,
         origins: ['Olasz'],
         imageUrl: '/assets/food-images/pizza-1.jpg',
         tag: ['Pizza', 'Csirke', 'Vacsora']
@@ -166,7 +166,7 @@ export class FoodService {
         name: 'Sushi tál',
         price: 2900,
         cookTime: '25-30 perc',
-        favorite: true,
+        favorite: false,
         origins: ['Japán'],
         imageUrl: '/assets/food-images/sushi-1.jpg',
         tag: ['Hal', 'Vacsora']

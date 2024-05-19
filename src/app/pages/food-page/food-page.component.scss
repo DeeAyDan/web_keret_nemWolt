@@ -53,6 +53,7 @@ img{
 .details .favorite{
     color: $primaryColor;
     font-size: 2.5rem;
+    cursor: pointer;
 }
 
 .details .favorite.not{

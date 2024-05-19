@@ -6,6 +6,8 @@ import { ActivatedRoute } from '@angular/router';
 import { SearchComponent } from '../../shared/search/search.component';
 import { TagsComponent } from '../../shared/tags/tags.component';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth/auth.service';
+import { error } from 'console';
 
 @Component({
   selector: 'app-main-page',
@@ -15,9 +17,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './main-page.component.scss'
 })
 export class MainPageComponent implements OnInit{
-
   foods: Food[] = []
-  constructor(private foodService: FoodService, private route:ActivatedRoute) { }
+  constructor(private authService:AuthService, private foodService: FoodService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -30,6 +31,6 @@ export class MainPageComponent implements OnInit{
       else{
         this.foods = this.foodService.getAllFood()
       }
-    })
+  })
   }
 }

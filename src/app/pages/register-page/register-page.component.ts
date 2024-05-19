@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Location } from '@angular/common';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-register-page',
@@ -22,17 +23,46 @@ export class RegisterComponent implements OnInit {
     })
   });
 
-  constructor(private location: Location) {}
+  constructor(private location: Location, private authService: AuthService) {}
 
   ngOnInit(): void {
     
   }
 
-  goBack(){
-    this.location.back();
+  onSubmit(){
+    if(this.signUpForm.invalid){
+      alert('Nem megfelelő adatok!');
+      return;
+    }
+
+    if(this.signUpForm.get('email')?.value === ''){
+      alert('Az email cím nem lehet üres!');
+      return;
+    }
+
+    if(this.signUpForm.get('password')?.value !== this.signUpForm.get('confirmPassword')?.value){
+      alert('A jelsyavak nem egyeznek!');
+      return;
+    }
+
+    const passwordCheck = this.signUpForm.get('password')?.value;
+    if(passwordCheck && passwordCheck.length < 6){
+      alert('A jelszónak legalább 6 karakter hosszúnak kell lennie!');
+      return;
+    }
+
+    const email = this.signUpForm.get('email')?.value;
+    const password = this.signUpForm.get('password')?.value;
+    if (email && password) {
+      this.authService.register(email, password).then(cred => {
+        console.log(cred);
+      }).catch(err => {
+        console.log(err);
+      });
+    }
   }
 
-  onSubmit(){
-    console.log(this.signUpForm.value);
+  goBack(){
+    this.location.back();
   }
 }

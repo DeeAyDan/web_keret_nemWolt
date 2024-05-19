@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "web_keret_etelrendeles_nemwolt": {
+    "nemwolt": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/web_keret_etelrendeles_nemwolt",
+            "outputPath": "dist/nemwolt",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "web_keret_etelrendeles_nemwolt:build:production"
+              "buildTarget": "nemwolt:build:production"
             },
             "development": {
-              "buildTarget": "web_keret_etelrendeles_nemwolt:build:development"
+              "buildTarget": "nemwolt:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "web_keret_etelrendeles_nemwolt:build"
+            "buildTarget": "nemwolt:build"
           }
         },
         "test": {

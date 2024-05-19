@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -15,11 +16,20 @@ export class LoginPageComponent implements OnInit{
   email = new FormControl('');
   password = new FormControl('');
 
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {}
 
   login() {
-
+    const email = this.email.value;
+    const password = this.password.value;
+    if (email && password) {
+      this.authService.login(email, password).then(cred => {
+        console.log(cred);
+        this.router.navigate(['']);
+      }).catch(err => {
+        console.log(err);
+      });
+    }
   }
 }
